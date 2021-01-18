@@ -10,23 +10,23 @@
 <body class="bg-light">
     <div class="container mt-5 w-75">
         <div class="d-flex justify-content-between align-items-center">
-            <h1>Trivia</h1>
-            <h5 class="mt-0" id="score">Score: 0</h5>
+            <h1>The Best Trivia</h1>
+            <h5 class="mt-0 m-3">Antonio Herazo</h5>
         </div>
         
         <form action="#" class="card mt-3 p-3">
             <div class="form-group">
                 <label for="totalQuestions">Elija Cantidad de Preguntas </label>
-                <input type="number" class="form-control" id="totalQuestions" onchange="urlFactory()" required>
+                <input type="number" class="form-control" id="totalQuestions" required>
               </div>
               <div class="form-group">
                   <label for="categorySelect">Elija Categoría</label>
-                  <select onchange="urlFactory()" name="" id="categorySelect" class="form-control" required>
+                  <select name="" id="categorySelect" class="form-control" required>
                   </select>
               </div>
               <div class="form-group">
                   <label for="dificultyQuest">Elija Dificultad</label>
-                  <select name="" id="dificultyQuest" class="form-control" onchange="urlFactory()" required>
+                  <select name="" id="dificultyQuest" class="form-control" required>
                       <option value="">Cualquier grado </option>
                       <option value="&difficulty=easy">Fácil</option>
                       <option value="&difficulty=medium">Medio</option>
@@ -35,7 +35,7 @@
               </div>
               <div class="form-group">
                   <label for="typeAnswQuest">Elija Tipo De Respuesta</label>
-                  <select name="" id="typeAnswQuest" class="form-control" onchange="urlFactory()" required>
+                  <select name="" id="typeAnswQuest" class="form-control" required>
                       <option value="">Cualquier Tipo</option>
                     <option value="&type=multiple">Multiple Respuesta</option>
                     <option value="&type=boolean">Falso - Verdadero</option>
@@ -43,8 +43,7 @@
               </div>
               <button class="btn btn-success" onclick="getQuestions()">Obtener Preguntas </button>
         </form>
-        <div id="nota" class="card mt-3 p-3">Nota </div>
-        <i class="bi bi-check2" style="color: greenyellow; font-size: 3em;"></i>
+        <h5 class="mt-0 m-3" id="score">Score: 0</h5>
         <div class="row " id="questions-container"></div>
     </div>
     <script src="./api.js"></script>

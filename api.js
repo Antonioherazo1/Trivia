@@ -1,3 +1,6 @@
+
+// ========================= Global Variables ======================
+
 let url2 = '';
 let counterRigthAnswers = 0; 
 let counterWrongAnswers = 0; 
@@ -6,16 +9,14 @@ const correctLabel = `<i class="bi bi-check2" style="color: greenyellow; font-si
 const wrongLabel = `<i class="bi bi-x" style="color: red; font-size: 3em;"></i>`;
 const score = document.getElementById('score');
 
-
-
-// ======================================================================
+// ============ Getting the Categories from the API =================
 function getCategory() {
     const url = 'https://opentdb.com/api_category.php';
     fetch(url)
         .then((response) => response.json())
         .then((data) => printCategory(data.trivia_categories))  
 }
-// ======================================================================
+// ========================== Print the Categories ===================
 function printCategory(categories) {
     const categorySelect = document.getElementById('categorySelect');
     let html = `<option value="">Cualquier Categoria</option>`
@@ -26,19 +27,7 @@ function printCategory(categories) {
 
     categorySelect.innerHTML= html;
 }
-// ======================================================================
-function urlFactory() {
-    const categoryQuestion = document.getElementById('categorySelect').value;
-    const totalQuestions = document.getElementById('totalQuestions').value;
-    const dificultyQuest = document.getElementById('dificultyQuest').value;
-    const typeAnswQuest = document.getElementById('typeAnswQuest').value;
-    
-    url2 = `https://opentdb.com/api.php?amount=${totalQuestions}${categoryQuestion}${dificultyQuest}${typeAnswQuest}`;
-
-    const nota =document.getElementById('nota');
-    nota.innerHTML = url2;  
-}
-// ======================================================================
+// ================ Getting the Questions from the API =================
 function getQuestions() {
     const categoryQuestion = document.getElementById('categorySelect').value;
     const totalQuestions = document.getElementById('totalQuestions').value;
@@ -51,7 +40,7 @@ function getQuestions() {
         .then((response) => response.json())
         .then((data) => printData(data.results))   
 }
-// ======================================================================
+// ==================== Printing the Questions in the screen =================
 function printData(data) {
     questions = data; 
     const containerData = document.getElementById('questions-container');
