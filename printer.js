@@ -34,7 +34,7 @@ export class Printer {
         let htmlDefinitive = `
             ${html}
             <div class="w-100 mt-5 mb-5 mr-3 ml-3">
-                <button class="btn btn-success w-100" onclick="checkQuestions()">Enviar </button>  
+                <button type="submit" class="btn btn-success w-100" onclick="checkQuestions()">Enviar </button>  
             </div> 
         `;
         // poner los datos en el html
@@ -68,7 +68,7 @@ export class Printer {
         array.forEach((item, index2)=>{
             html += `
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="answer${index1}" id="${index1}${index2}" value="${item}">
+                    <input class="form-check-input" type="radio" name="answer${index1}" id="${index1}${index2}" value="${item}" required>
                     <label class="form-check-label" for="${index1}${index2}">${item}</label>           
                 </div>              
             `; // this is going to be the html created for the radio buttoms
