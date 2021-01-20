@@ -34,7 +34,7 @@ export class Printer {
         let htmlDefinitive = `
             ${html}
             <div class="w-100 mt-5 mb-5 mr-3 ml-3">
-                <button type="submit" class="btn btn-success w-100" onclick="checkQuestions()">Enviar </button>  
+                <button type="submit" class="btn btn-success w-100" >Enviar </button>  
             </div> 
         `;
         // poner los datos en el html
