@@ -16,8 +16,8 @@ window.checkQuestions = checkQuestions;
 
 // ============ Getting the Categories from the API =================
 function getCategory() {
-    
-    localStorage.setItem("score", 0);
+
+    if(!localStorage.getItem("score")) {localStorage.setItem("score", 0)}
     document.getElementById('score').innerHTML = `Score: ${localStorage.getItem("score")}`; 
 
     const url = 'https://opentdb.com/api_category.php';
