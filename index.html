@@ -14,7 +14,7 @@
             <h5 class="mt-0 m-3">Antonio Herazo</h5>
         </div>
         
-        <form action="#" class="card mt-3 p-3">
+        <form onsubmit="event.preventDefault(), getQuestions()" class="card mt-3 p-3">
             <div class="form-group">
                 <label for="totalQuestions">Escriba Cantidad de Preguntas </label>
                 <input type="number" class="form-control" id="totalQuestions" required>
@@ -41,12 +41,12 @@
                     <option value="&type=boolean">Falso - Verdadero</option>
                   </select>
               </div>
-              <button class="btn btn-success" onclick="getQuestions()">Obtener Preguntas </button>
+              <button class="btn btn-success" >Obtener Preguntas </button>
         </form>
         <h5 class="mt-0 m-3" id="score">Score: 0</h5>
         <Form  onsubmit=" event.preventDefault(),checkQuestions()" class="row " id="questions-container" >
         </form>
     </div>
-    <script type="module" src="./api.js"></script>
+    <script type="module" src="./assets/js/api.js"></script>
 </body>
 </html>
